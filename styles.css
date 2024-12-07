@@ -1,1 +1,86 @@
-
+/* Genel Stil */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black;
+  }
+  
+  /* Dinamik Arka Plan */
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #000, #001f3f);
+    animation: backgroundMove 10s linear infinite;
+  }
+  
+  @keyframes backgroundMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 200% 200%; }
+  }
+  
+  /* Kutlama Alanı */
+  .container {
+    position: relative;
+    text-align: center;
+    z-index: 10;
+  }
+  
+  .title {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 0 20px #ff4500, 0 0 40px #ff6347;
+    animation: glow 2s infinite alternate;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    color: #ffd700;
+    animation: slideIn 3s infinite alternate;
+  }
+  
+  .celebrate-btn {
+    background: linear-gradient(45deg, #ff4500, #ffd700);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px #ff6347;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .celebrate-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px #ffd700;
+  }
+  
+  /* Animasyonlar */
+  @keyframes glow {
+    0% { text-shadow: 0 0 10px #ff4500; }
+    100% { text-shadow: 0 0 30px #ff6347; }
+  }
+  
+  @keyframes slideIn {
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(10px); }
+  }
+  
+  #fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+  }
+  
